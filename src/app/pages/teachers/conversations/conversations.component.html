@@ -1,0 +1,27 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+ <app-topbar></app-topbar>
+<div class="details">
+  <div class="recentCustomers">
+    <div class="cardHeader" *ngIf="alumnos.length > 0">
+      <table  *ngIf="alumnos.length > 0">
+        <h2>Mensajes</h2>
+          <tr *ngFor="let alumno of alumnos">
+            <td width="60px" >
+              <div class="imgBx">
+                <img src="{{ alumno.foto }}" alt="" (click)="iniciarConversacion(alumno.id)">
+              </div>
+            <td>
+              <td>
+                <h4 (click)="iniciarConversacion(alumno.id)">{{ alumno.nombre }} {{ alumno.apellido }}</h4>
+              </td>
+          </tr>
+        </table>
+      </div>  
+      <div *ngIf="alumnos.length === 0">
+        <p>No hay alumnos disponibles.</p>
+      </div>
+    </div>
+  </div>
+  
+

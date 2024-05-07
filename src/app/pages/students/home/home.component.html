@@ -1,0 +1,102 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+  <app-topbar></app-topbar>
+  <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <ng-container *ngIf="usuarioLogueado?.rol === 1">
+      <div class="image">
+        <img [src]="usuarioLogueado?.foto" class="img-circle elevation-2" alt="User Image">
+        <a href="#" class="d-block">{{ usuarioLogueado?.nombre }}</a>
+      </div>
+      <div class="info">
+        <p>Bienvenido, {{ usuarioLogueado?.nombre }}</p>
+      </div>
+    </ng-container>
+  </div> -->
+  
+<div class="details">
+  <div class="recentOrders">
+  <div class="cardHeader">
+    <div class="col-md-12 offset-md-3">
+      <ng-container *ngIf="usuarioLogueado?.rol === 1">
+        <!-- <div class="image">
+          <img [src]="usuarioLogueado?.foto" class="img-circle elevation-2" alt="User Image">
+          <a href="#" class="d-block">{{ usuarioLogueado?.nombre }}</a>
+        </div> -->
+        <div class="info">
+          <!-- Agregar el mensaje de bienvenida con el nombre del usuario -->
+          <h2>Bienvenido, {{ usuarioLogueado?.nombre }}</h2>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="usuarioLogueado?.rol === 2">
+        <!-- <div class="image">
+          <img [src]="usuarioLogueado?.foto" class="img-circle elevation-2" alt="User Image">
+          <a href="#" class="d-block">{{ usuarioLogueado?.nombre }}</a>
+        </div> -->
+        <div class="info">
+          <!-- Agregar el mensaje de bienvenida con el nombre del usuario -->
+          <h2>Bienvenido, {{ usuarioLogueado?.nombre }}</h2>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="usuarioLogueado?.rol === 1">
+
+      <h2>Explora a tus Tutores</h2>
+     
+      <div class="buscar">
+        <input type="text" placeholder="Buscar por especialidad" required [(ngModel)]="filtroEspecialidad" /> 
+        <button class="btn btn-primary" (click)="buscarPorEspecialidad()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      
+      
+        <!-- <button class="btn btn-primary mt-2" (click)="buscarPorEspecialidad()">Buscar</button> -->
+   
+        <div *ngIf="profesores.length === 0" class="alert alert-warning" role="alert" style="padding: 5px;">
+          No se encontraron tutores.
+      </div>
+      
+      <div class="cardBox">
+        <div class="card col-md-3" *ngFor="let profesor of profesores">
+          <div class="card-content" (click)="irAPerfil(profesor.id)">
+            <div class="card-img-container">
+              <img [src]="profesor.foto" class="card-img-top"> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cardName">{{ profesor.nombre }}</h5>
+              <p class="cardName cardSpecialty">{{ profesor.especialidad }}</p>
+              <p class="cardName cardDescription">{{ profesor.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+      </div>
+      
+      <button class="btn btn-primary mt-3" (click)="cargarMasProfesores()" *ngIf="profesores.length >= mostrarCantidad && !cargandoMas">Cargar más</button>
+      <div *ngIf="cargandoMas" class="text-center mt-3">
+        <i class="fas fa-spinner fa-spin"></i> Cargando más profesores...
+      </div>
+    </div>
+  </div>
+  </div>
+</div> 
+
+
+
+  
+      <!-- <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Listado de Cursos</h2>
+        <div *ngIf="cursos.length === 0" class="alert alert-warning" role="alert">
+          No se encontraron cursos.
+        </div>
+        <div class="card" *ngFor="let curso of cursos">
+          <div class="card-body">
+            <h5 class="card-title">{{ curso.nombre }}</h5>
+            <p class="card-text">{{ curso.descripcion }}</p>
+            <p class="card-text"><small class="text-muted">Creado el: {{ curso.createdAt | date:'short' }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div> -->

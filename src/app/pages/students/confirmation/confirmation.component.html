@@ -1,0 +1,23 @@
+<app-navbar-student></app-navbar-student>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+<div *ngIf="horario && profesor">
+    <h2>Detalles del Horario</h2>
+    <p>Título: {{ horario.titulo }}</p>
+    <p>Fecha: {{ horario.fecha }}</p>
+    <p>Hora de inicio: {{ horario.hora_inicio }}</p>
+    <p>Hora de fin: {{ horario.hora_fin }}</p>
+  
+    <h2>Detalles del Profesor</h2>
+    <p>Nombre: {{ profesor.nombre }}</p>
+    <p>Especialidad: {{ profesor.especialidad }}</p>
+    <p>Descripción: {{ profesor.descripcion }}</p>
+    <!-- <div *ngIf="showPayPalButtons">
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      </div> -->
+    <button (click)="registrarInscripcion()">Registrar Inscripción</button>
+  </div>
+  </div>
+  </div>
+  </div>

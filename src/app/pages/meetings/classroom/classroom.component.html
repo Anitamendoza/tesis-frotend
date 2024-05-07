@@ -1,0 +1,26 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+<app-topbar></app-topbar>
+<div class="details">
+  <div class="recentOrders">
+    <div class="cardHeader">
+    <div class="col-md-8 offset-md-3">
+      <h2>Bienvenido a la sección de reuniones pendientes</h2>
+
+      <div *ngFor="let reunion of reuniones" class="card mb-3">
+
+      <div *ngFor="let reunion of reuniones">
+        <div class="card-body">
+          <p class="card-text"><strong>Fecha:</strong> {{ reunion.fecha }}</p>
+          <p class="card-text"><strong>Hora de inicio:</strong> {{ reunion.horaInicio }}</p>
+          <p class="card-text"><strong>Hora de fin:</strong> {{ reunion.horaFin }}</p>
+          <div *ngIf="reunion.sala">
+          <button  class="btn btn-primary" (click)="ingresarReunion(reunion.sala)">Ir a Reunión</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>

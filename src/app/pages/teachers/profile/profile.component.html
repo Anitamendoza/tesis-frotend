@@ -1,0 +1,53 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+  <app-topbar></app-topbar>
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2>Mi Perfil </h2>
+        <button (click)="editMode = true" class="btn btn-primary">
+          <i class="fas fa-edit"></i>
+        </button>
+      </div>
+      <div *ngIf="profesor">
+        <h6 class="profile-name text-center"><i></i> {{ profesor.nombre }}</h6>
+        <div class="profile-info">
+          <div class="edit-profile" *ngIf="editMode">
+            <input [(ngModel)]="profesor.nombre" type="text" placeholder="Nombre">
+            <input [(ngModel)]="profesor.apellido" type="text" placeholder="Apellido">
+            <input [(ngModel)]="profesor.email" type="email" placeholder="Email">
+            <input [(ngModel)]="profesor.especialidad" type="text" placeholder="Especialidad">
+            <textarea [(ngModel)]="profesor.descripcion" placeholder="Descripción"></textarea>
+            <div class="profile-actions">
+              <button (click)="guardarCambios()" class="btn btn-success">
+                <i class="fas fa-save"></i> Guardar
+              </button>
+              <button (click)="editMode = false" class="btn btn-danger">
+                <i class="fas fa-times"></i> Cancelar
+              </button>
+            </div>
+          </div>
+          <div *ngIf="!editMode">
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ profesor.email }}</p>
+            <p><i class="fas fa-graduation-cap"></i> <strong>Especialidad:</strong> {{ profesor.especialidad }}</p>
+            <p><i class="fas fa-align-left"></i> <strong>Descripción:</strong> {{ profesor.descripcion }}</p>
+            <div class="profile-actions">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recentOrders">
+        <div class=" cardHeader">
+    <div class=" teacher-profile">
+        <h2>Horario</h2>
+        <full-calendar [options]="calendarOptions"></full-calendar>
+    </div>
+</div>
+</div>
+  </div>
+</div>
+
+<!-- teacher-profile.component.html -->
+

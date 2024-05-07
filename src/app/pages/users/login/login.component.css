@@ -1,0 +1,215 @@
+
+body {
+  background-color: #1C1678;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(#36D7FF, #36D7FF);
+  animation: ripple 15s infinite, moveCircle 30s infinite;
+}
+
+.circle:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s, 0s;
+}
+
+.circle:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  left: 30%;
+  top: 60%;
+  animation-delay: 1s, 5s;
+}
+
+.circle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  left: 70%;
+  top: 30%;
+  animation-delay: 5s, 10s;
+}
+
+.circle:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 20%;
+  top: 80%;
+  animation-delay: 0s, 15s;
+}
+
+.circle:nth-child(5) {
+  width: 140px;
+  height: 140px;
+  left: 50%;
+  top: 10%;
+  animation-delay: 8s, 20s;
+}
+
+.circle:nth-child(6) {
+  width: 160px;
+  height: 160px;
+  left: 80%;
+  top: 70%;
+  animation-delay: 3s, 25s;
+}
+
+.circle:nth-child(7) {
+  width: 80px;
+  height: 80px;
+  left: 5%;
+  top: 50%;
+  animation-delay: 6s, 15s;
+}
+
+.circle:nth-child(8) {
+  width: 100px;
+  height: 100px;
+  left: 90%;
+  top: 40%;
+  animation-delay: 2s, 25s;
+}
+
+.circle:nth-child(9) {
+  width: 120px;
+  height: 120px;
+  left: 60%;
+  top: 80%;
+  animation-delay: 4s, 10s;
+}
+
+.circle:nth-child(10) {
+  width: 140px;
+  height: 140px;
+  left: 30%;
+  top: 15%;
+  animation-delay: 7s, 20s;
+}
+
+.circle:nth-child(11) {
+  width: 160px;
+  height: 160px;
+  left: 70%;
+  top: 60%;
+  animation-delay: 1s, 30s;
+}
+
+.circle:nth-child(12) {
+  width: 180px;
+  height: 180px;
+  left: 15%;
+  top: 70%;
+  animation-delay: 5s, 5s;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.card-header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  color: #495057;
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 50px);
+  }
+  50% {
+    transform: translate(0, 100px);
+  }
+  75% {
+    transform: translate(-50px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+
+.icon-transparent {
+  color:  #1C1678;
+}
+
+.input-group {
+  border-radius: 1px;
+  overflow: hidden;
+}

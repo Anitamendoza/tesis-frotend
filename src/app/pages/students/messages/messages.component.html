@@ -1,0 +1,107 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+  <app-topbar></app-topbar>
+  <div class="details">
+    <div class="recentOrders">
+      <div class="cardHeader">
+        <h2 class="card-title">{{ profesor.nombre }}</h2>
+        <a href="#" class="btn">Ver Perfil</a>
+      </div>
+      <div class="col-md-8 offset-md-3">
+        <div class="chat-container">
+          <div class="header">
+            <h2>Chat</h2>
+            <button class="load-previous" (click)="cargarMensajesAnteriores()">Leer mensajes anteriores</button>
+          </div>
+          <div class="messages">
+            <div *ngFor="let mensaje of mensajes" class="message"
+              [ngClass]="{'received': mensaje.sent === true, 'sent': mensaje.sent === false}">
+              <div *ngIf="mensaje.contenido !== null" class="message-content">{{ mensaje.contenido }}</div>
+              <div *ngIf="mensaje.archivo_url" class="message-content">
+                <a [href]="mensaje.archivo_url" download>
+                  <i class="fa fa-download"></i> Descargar archivo
+                </a>
+              </div>
+              <div *ngIf="mensaje.audio_url" class="message-content">
+                <audio controls>
+                  <source [src]="mensaje.audio_url" type="audio/mpeg">
+                  Tu navegador no soporta la reproducción de audio.
+                </audio>
+              </div>
+            </div>
+          </div>
+          <div class="input-container">
+            <input type="text" [(ngModel)]="nuevoMensaje" placeholder="Escribe un mensaje..." class="message-input">
+            <button (click)="iniciarGrabacion()" [disabled]="grabando" class="record-button">
+              <i class="fas fa-microphone"></i>
+            </button>
+            <button (click)="detenerGrabacion()" [disabled]="!grabando" class="stop-record-button">
+              <i class="fas fa-stop"></i>
+            </button>
+            <button class="send-button"> <label for="fileInput" class="custom-file-upload">
+                <i class="fas fa-file"></i> Subir archivo
+              </label>
+              <input id="fileInput" type="file" (change)="onFileSelected($event)" style="display: none;">
+            </button>
+            <!-- <input id="fileInput" type="file" (change)="onFileSelected($event)"> -->
+            <button (click)="enviarMensaje()" class="send-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recentCustomers">
+      <div class="cardHeader">
+        <div class="card-body">
+          <h2>Detalles</h2>
+          <img [src]="profesor.foto" class="card-img-top">
+          <h5 class="card-title">{{ profesor.nombre }}</h5>
+          <p class="card-text">{{ profesor.especialidad }}</p>
+          <p class="card-text">{{ profesor.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- ================= New Customers ================ -->
+
+  <!-- <div class="details">
+  <div class="recentCustomers">
+    <div class="col-md-8 offset-md-3">
+      <div class="chat-container">
+        <div class="header">
+          <h2>Chat</h2>
+          <button class="load-previous" (click)="cargarMensajesAnteriores()">Leer mensajes anteriores</button>
+        </div>
+        <div class="messages">
+          <div *ngFor="let mensaje of mensajes" class="message"
+            [ngClass]="{'sent': mensaje.sent === true, 'received': mensaje.sent === false}">
+            <div *ngIf="mensaje.contenido !== null" class="message-content">{{ mensaje.contenido }}</div>
+            <div *ngIf="mensaje.archivo_url" class="message-content">
+              <a [href]="mensaje.archivo_url" download>
+                <i class="fa fa-download"></i> Descargar archivo
+              </a>
+            </div>
+
+            <div *ngIf="mensaje.audio_url" class="message-content">
+              <audio controls>
+                <source [src]="mensaje.audio_url" type="audio/mpeg">
+                Tu navegador no soporta la reproducción de audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-container">
+          <input type="text" [(ngModel)]="nuevoMensaje" placeholder="Escribe un mensaje..." class="message-input">
+          <button (click)="iniciarGrabacion()" [disabled]="grabando" class="record-button">Grabar mensaje de
+            voz</button>
+          <button (click)="detenerGrabacion()" [disabled]="!grabando" class="stop-record-button">Detener</button>
+          <input id="fileInput" type="file" (change)="onFileSelected($event)">
+          <button (click)="enviarMensaje()" class="send-button">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

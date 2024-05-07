@@ -1,0 +1,36 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+  <app-topbar></app-topbar>
+  <div class="details">
+
+    <div class="recentOrders">
+      <div class=" cardHeader">
+      <!-- teacher-profile.component.html -->
+      <div class="teacher-profile">
+        <h2>Horarios del profesor</h2>
+        <full-calendar [options]="calendarOptions"></full-calendar>
+      </div>          
+  </div>
+    </div>
+    <div class="recentOrders">
+      <div class="cardHeader">
+      <div class="col-md-8 offset-md-3">
+
+
+        <h2>Perfil del Profesor</h2>
+        <div class="card">
+
+          <div class="card-content">
+            <div class="card-img-container">
+              <img [src]="profesor.foto" class="card-img-top"> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title cardName">{{ profesor.nombre }}</h5>
+              <p class="cardName cardSpecialty">{{ profesor.especialidad }}</p>
+              <p class="cardName cardDescription">{{ profesor.descripcion }}</p>
+            </div>
+        </div>
+       
+    </div>
+  </div>
+  

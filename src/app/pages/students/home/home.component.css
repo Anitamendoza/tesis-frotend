@@ -1,0 +1,81 @@
+.nav-icon {
+    font-size: 25px; /* Ajusta el tamaño del icono según sea necesario */
+    color: #1C1678;
+  }
+  .nav-icon1 {
+    color: #1C1678;
+  }
+
+  .buscar {
+    display: flex; /* Utilizar flexbox */
+    align-items: center; /* Alinear elementos verticalmente */
+    position: relative;
+    padding: 5px;
+  }
+  
+  .buscar input {
+    width: calc(100%); /* Tamaño calculado para dejar espacio al botón */
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #1C1678;
+    outline: none;
+    border: 3px solid #1C1678;
+    border-radius: 5px;
+    transition: all 0.6s ease;
+  }
+  
+  .btn {
+    height: 40px; /* Ajuste de altura para que coincida con el input */
+    margin-left: -40px; /* Espacio negativo para superponer el botón al input */
+    z-index: 1; /* Asegurar que el botón esté por encima del input */
+    border: 3px solid #1C1678;
+
+  }
+  
+
+.card-content {
+  display: flex;
+}
+
+.card-img-container {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+  margin-right: 20px; /* Añade espacio entre la imagen y el texto */
+}
+
+.card-img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10%; /* Aplica bordes redondeados para hacer la imagen circular */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del círculo */
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  flex: 1;
+  padding-left: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cardSpecialty {
+  font-size: 16px;
+  margin-bottom: 5px;
+
+}
+
+.cardDescription {
+  font-size: 14px;
+  margin-bottom: 5px;
+
+}

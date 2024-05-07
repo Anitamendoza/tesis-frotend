@@ -1,0 +1,137 @@
+<body>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+<div class="container mt-3">
+  <form  class="card-body #"  (ngSubmit)="submitForm()" #profesorForm="ngForm">
+    <div class="card-header">
+      <!-- <a href="login">
+        <img src="assets/images/tesis/logo12.png" width="170" height="50" alt="Nombre de tu empresa">
+      </a> -->
+    </div>
+      <h6>Datos del Profesor</h6>
+      <div class="form-row">
+
+      <div class="form-group">
+        <label for="nombreProfesor">Nombre</label>
+        <input type="text" class="form-control" id="nombreProfesor" name="nombreProfesor" [(ngModel)]="profesores.nombre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="apellidoProfesor">Apellido</label>
+        <input type="text" class="form-control" id="apellidoProfesor" name="apellidoProfesor" [(ngModel)]="profesores.apellido" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="dniProfesor">DNI</label>
+        <input type="number" class="form-control" id="dniProfesor" name="dniProfesor" [(ngModel)]="profesores.dni" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="emailProfesor">Email</label>
+        <input type="email" class="form-control" id="emailProfesor" name="emailProfesor" [(ngModel)]="profesores.email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="fecha_nacProfesor">Fecha de nacimiento</label>
+        <input type="date" class="form-control" id="fecha_nacProfesor" name="fecha_nacProfesor" [(ngModel)]="profesores.fecha_nac" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="generoProfesor">Genero</label>
+        <input type="text" class="form-control" id="generoProfesor" name="generoProfesor" [(ngModel)]="profesores.genero" required>
+      </div>
+      <div class="form-group">
+        <label for="telefonoProfesor">Telefono</label>
+        <input type="text" class="form-control" id="telefonoProfesor" name="telefonoProfesor" [(ngModel)]="profesores.telefono" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="fotoProfesor">Foto:</label>
+        <input type="file" class="form-control" id="fotoProfesor" name="fotoProfesor" [(ngModel)]="profesor.fotoProfesor" required>
+      </div> -->
+      </div>
+<h6>Direccion</h6>
+<div class="form-row">
+
+      <div class="form-group1">
+        <label for="calle">Calle</label>
+        <input type="text" class="form-control" id="calle" name="calle" [(ngModel)]="direccion.calle" required>
+      </div>
+      <div class="form-group1">
+        <label for="distrito">Distrito</label>
+        <input type="text" class="form-control" id="distrito" name="distrito" [(ngModel)]="direccion.distrito" required>
+      </div>
+      <div class="form-group1">
+        <label for="provincia">Provincia</label>
+        <input type="text" class="form-control" id="provincia" name="provincia" [(ngModel)]="direccion.provincia" required>
+      </div>
+      <div class="form-group1">
+        <label for="codigo_postal">Codigo postal</label>
+        <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" [(ngModel)]="direccion.codigo_postal" required>
+      </div>
+
+</div>
+      <h6>Perfil</h6>
+      <div class="form-row">
+
+      <div class="form-group">
+        <label for="especialidadProfesor">Especialidad</label>
+        <input type="text" class="form-control" id="especialidadProfesor" name="especialidadProfesor" [(ngModel)]="profesores.especialidad" required>
+      </div>
+      <div class="form-group">
+        <label for="descripcionProfesor">Descripcion de tu perfil</label>
+        <input type="text" class="form-control" id="descripcionProfesor" name="descripcionProfesor" [(ngModel)]="profesores.descripcion" required>
+      </div>
+      <div class="form-group">
+        <label for="fotoProfesor">Foto</label>
+        <input type="file" class="form-control" id="fotoProfesor" name="fotoProfesor" (change)="onFileSelected($event)" required>
+      </div>
+      </div>
+      <h6>Antecedentes educativos</h6>
+      <div class="form-row">
+
+      <div class="form-group">
+        <label for="nombreAntecedentes">Carrera</label>
+        <input type="text" class="form-control" id="nombreAntecedentes" name="nombreAntecedentes" [(ngModel)]="educativos.nombre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="institucion">Institucion</label>
+        <input type="text" class="form-control" id="institucion" name="institucion" [(ngModel)]="educativos.institucion" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="pais_institucion">Pais de institucion</label>
+        <input type="test" class="form-control" id="pais_institucion" name="pais_institucion" [(ngModel)]="educativos.pais_institucion" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha_obtencion">Fecha obtencion</label>
+        <input type="date" class="form-control" id="fecha_obtencion" name="fecha_obtencion" [(ngModel)]="educativos.fecha_obtencion" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="nivel_educacion">Nivel de educacion</label>
+        <input type="test" class="form-control" id="nivel_educacion" name="nivel_educacion" [(ngModel)]="educativos.nivel_educacion" required>
+      </div>
+      </div>
+      <h6>Datos de cuenta</h6>
+      <div class="form-row">
+
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="profesores.usuario" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="profesores.password" required>
+      </div>
+      </div>
+        
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>

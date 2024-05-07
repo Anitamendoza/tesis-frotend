@@ -1,0 +1,156 @@
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="home">
+                    <span class="icon">
+                        <img class="mt-2" src="/assets/images/tesis/lo.png" width="70" height="70" alt="GUIDO">
+                    </span>
+                    <span class="title"><img class="mt-2" src="/assets/images/tesis/go.png" width="100" height="100"
+                            alt="GUIDO"></span>
+                </a>
+            </li>
+            <!-- <li style="border-bottom: none; margin-bottom: 0;">
+                <a href="#">
+                    <span class="icon-1">
+                        <img class="logo-principal" src="assets/images/tesis/logo-guido.jpg">
+                    </span>
+                    <span class="title"></span>
+                </a>
+            </li> -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <!--  <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                    <div class="image">
+                        <img [src]="usuarioLogueado?.foto" class="img-circle elevation-2" alt="User Image">
+                        <a href="#" class="d-block"><span class="title">{{ usuarioLogueado?.nombre }}</span></a>
+                    </div>
+                </ng-container> -->
+                <li>
+                    <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                        <span class="icon">
+
+                        <div class="image">
+                    
+                            <span class="title text-center" style="display: inline-block; color: #f0f0f0; text-align: center; vertical-align: middle;">
+                                {{ usuarioLogueado?.nombre }}
+                            </span>
+                        </div>
+                    </span>
+                    </ng-container>
+                    
+                </li>
+                <li>
+                    <ng-container *ngIf="usuarioLogueado?.rol === 2">
+                        <div  class="icon">
+                            <span class="title text-center" style="display: inline-block; color: #f0f0f0; text-align: center; vertical-align: middle;">
+                                {{ usuarioLogueado?.nombre }}
+                            </span>
+                        </div>
+                    </ng-container>
+                </li>
+                <!-- <li>
+                    <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                        <span class="title">{{ usuarioLogueado?.nombre }}</span>
+                    </ng-container>
+                </li>
+            </div>
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <ng-container *ngIf="usuarioLogueado?.rol === 2">
+                    <div class="image">
+                        <img [src]="usuarioLogueado?.foto" class="img-circle elevation-2" alt="User Image">
+                        <a href="#" class="d-block"><span class="title">{{ usuarioLogueado?.nombre }}</span></a>
+                    </div>
+                </ng-container>
+            </div>
+            <hr> -->
+            <li>
+                <a routerLink="/home">
+                    <span class="icon">
+                        <!-- <i class="nav-icon2 fas fa-tachometer-alt dashboard-icon"></i> -->
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Inicio</span>
+                </a>
+            </li>
+            <ng-container *ngIf="usuarioLogueado?.rol === 2">
+                <li>
+                    <a routerLink="/conversations" class="nav-link">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Mensajes</span>
+                    </a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                <li>
+                    <a routerLink="/conversation" class="nav-link" routerLinkActive="active">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Mensajes</span>
+                    </a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                <li>
+                    <a routerLink="/calendarStudent" class="nav-link" routerLinkActive="active">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Calendario</span>
+                    </a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="usuarioLogueado?.rol === 2">
+                <li>
+                    <a routerLink="/calendarTeacher" class="nav-link" routerLinkActive="active">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Calendario</span>
+                    </a>
+                </li>
+            </ng-container>
+            <li>
+                <a routerLink="/meetings" class="nav-link" routerLinkActive="active">
+                    <span class="icon">
+                        <ion-icon name="videocam"></ion-icon>
+
+                    </span>
+                    <span class="title"> Sala de clase</span>
+                </a>
+            </li>
+            <ng-container *ngIf="usuarioLogueado?.rol === 1">
+                <li>
+                    <a routerLink="/studentProfile" class="nav-link" routerLinkActive="active">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title"> Cuenta</span>
+                    </a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="usuarioLogueado?.rol === 2">
+                <li>
+                    <a routerLink="/profile" class="nav-link" routerLinkActive="active">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title"> Cuenta</span>
+                    </a>
+                </li>
+            </ng-container>
+            <li class="nav-item">
+                <a class="nav-link" (click)="cerrarSesion()">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title"> Cerrar sesión</span>
+                </a>
+            </li>
+    </div>

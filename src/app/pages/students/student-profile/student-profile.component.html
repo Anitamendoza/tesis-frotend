@@ -1,0 +1,47 @@
+<app-navbar-student></app-navbar-student>
+<div class="main">
+  <app-topbar></app-topbar>
+  <div class="details">
+    <div class="recentOrders">
+        <div class="cardHeader">
+          <h2>Mi Perfil </h2>
+          <button (click)="editMode = true" class="btn btn-primary">
+            <i class="fas fa-edit"></i>
+          </button>
+      </div>
+          <div *ngIf="alumno">
+            <h6 class="profile-name text-center"><i></i> {{ alumno.nombre }} {{ alumno.apellido }}</h6>
+            <div class="profile-info">
+              <div class="edit-profile" *ngIf="editMode">
+                <input [(ngModel)]="alumno.nombre" type="text" placeholder="Nombre">
+                <input [(ngModel)]="alumno.apellido" type="text" placeholder="Apellido">
+                <input [(ngModel)]="alumno.email" type="email" placeholder="Email">
+                <input [(ngModel)]="alumno.usuario" type="text" placeholder="Usuario">
+                <input [(ngModel)]="alumno.genero" type="text" placeholder="Género">
+                <input [(ngModel)]="alumno.telefono" type="text" placeholder="Teléfono">
+                <input [(ngModel)]="alumno.fecha_nac" type="date" placeholder="Fecha de Nacimiento">
+                <div class="profile-actions">
+                  <button (click)="guardarCambios()" class="btn btn-success">
+                    <i class="fas fa-save"></i> Guardar
+                  </button>
+                  <button (click)="editMode = false" class="btn btn-danger">
+                    <i class="fas fa-times"></i> Cancelar
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="!editMode">
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ alumno.email }}</p>
+                <p><i class="fas fa-user"></i> <strong>Usuario:</strong> {{ alumno.usuario }}</p>
+                <p><i class="fas fa-venus-mars"></i> <strong>Género:</strong> {{ alumno.genero }}</p>
+                <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> {{ alumno.telefono }}</p>
+                <p><i class="fas fa-calendar-alt"></i> <strong>Fecha de Nacimiento:</strong> {{ alumno.fecha_nac }}</p>
+                <div class="profile-actions">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

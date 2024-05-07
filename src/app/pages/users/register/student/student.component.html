@@ -1,0 +1,148 @@
+<body>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+<div class="card mt-5">
+
+  <form class="card-body"  (ngSubmit)="submitForm()" #alumnoForm="ngForm">
+    <div class="card-header">
+      <a href="login">
+        <img src="assets/images/tesis/logo12.png" width="170" height="50" alt="Nombre de tu empresa">
+      </a>
+    </div>
+    <h6>Datos del Apoderado</h6>
+    <div class="form-row">
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="nombreApoderado" name="nombreApoderado" placeholder="Nombre" [(ngModel)]="apoderado.nombre" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="apellidoApoderado" name="apellidoApoderado" placeholder="Apellido" [(ngModel)]="apoderado.apellido" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="number" class="form-control" id="dniApoderado" name="dniApoderado" placeholder="DNI"  [(ngModel)]="apoderado.dni" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="email" class="form-control" id="emailApoderado" name="emailApoderado" placeholder="Email" [(ngModel)]="apoderado.email" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="date" class="form-control" id="fecha_nacApoderado" name="fecha_nacApoderado" placeholder="Fecha de nacimiento" [(ngModel)]="apoderado.fecha_nac" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="generoApoderado" name="generoApoderado" placeholder="Género" [(ngModel)]="apoderado.genero" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="telefonoApoderado" name="telefonoApoderado" placeholder="Telefono"  [(ngModel)]="apoderado.telefono" required>
+      </div>
+    </div>
+  </div>
+
+  <h6>Direccion</h6>
+
+  <div class="form-row">
+    <div class="form-group1">
+      <div class="input-group">
+      <input type="text" class="form-control" id="calle" name="calle" placeholder="Calle"  [(ngModel)]="direccion.calle" required>
+      </div>
+    </div>
+    <div class="form-group1">
+      <div class="input-group">
+      <input type="text" class="form-control" id="distrito" name="distrito" placeholder="Distrito" [(ngModel)]="direccion.distrito" required>
+      </div>
+    </div>
+    <div class="form-group1">
+      <div class="input-group">
+      <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" [(ngModel)]="direccion.provincia" required>
+      </div>
+    </div>
+    <div class="form-group1">
+      <div class="input-group">
+      <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" placeholder="Código postal" [(ngModel)]="direccion.codigo_postal" required>
+      </div>
+    </div>
+
+  </div>
+    <h6>Datos del Alumno</h6>
+    <div class="form-row">
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="nombreAlumno" name="nombreAlumno" placeholder="Nombre"  [(ngModel)]="alumno.nombre" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="apellidoAlumno" name="apellidoAlumno" placeholder="Apellido" [(ngModel)]="alumno.apellido" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="number" class="form-control" id="dniAlumno" name="dniAlumno" placeholder="DNI" [(ngModel)]="alumno.dni" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="email" class="form-control" id="emailAlumno" name="emailAlumno"  placeholder="Email" [(ngModel)]="alumno.email" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="date" class="form-control" id="fecha_nacAlumno" name="fecha_nacAlumno" placeholder="Fecha de nacimiento" [(ngModel)]="alumno.fecha_nac" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="generoAlumno" name="generoAlumno" placeholder="Genero" [(ngModel)]="alumno.genero" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="telefonoAlumno" name="telefonoAlumno" placeholder="Telefono" [(ngModel)]="alumno.telefono" required>
+      </div>
+    </div>
+
+    </div>
+    <h6>Datos de cuenta</h6>
+    <div class="form-row">
+
+    <div class="form-group">
+      <div class="input-group">
+      <input type="text" class="form-control" id="usuario" name="usuario"  placeholder="Usuario" [(ngModel)]="alumno.usuario" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"  [(ngModel)]="alumno.password" required>
+      </div>
+    </div>
+    </div> 
+    <button type="submit" class="btn btn-primary">Registrar</button>
+
+   
+  </form>
+</div>

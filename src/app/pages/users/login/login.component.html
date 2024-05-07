@@ -1,0 +1,49 @@
+<body>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="login-box">
+    <div class="card">
+      <div class="card-header">
+        <a href="index.html">
+          <img src="assets/images/tesis/logo12.png" width="170" height="70" alt="Nombre de tu empresa">
+        </a>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control input-transparent" placeholder="Usuario" [(ngModel)]="usuario" name="usuario" required>
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-user icon-transparent"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="password" class="form-control input-transparent" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-lock icon-transparent"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="remember">
+            <label class="form-check-label" for="remember">Recordarme</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+          <button type="button" class="btn btn-danger btn-block"><i class="fab fa-google"></i> Ingresar con Google</button>
+        </form>
+        <p class="text-danger text-center">{{ mensaje }}</p>
+        <div class="text-center">
+          <a href="#">He olvidado mi contraseña</a>
+        </div>
+        <div class="text-center">
+          <a href="/registerStudent">Registrarme</a>
+        </div>
+      </div>
+    </div>
+  </div>
